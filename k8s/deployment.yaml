@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: app-conv
-        image: fabricioveronez/conversao-temperatura:v3
+        image: jvnsantos/conversiontemp:v1
         ports:
           - containerPort: 8080
 
