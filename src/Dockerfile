@@ -1,5 +1,5 @@
 # Imagem base
-FROM node
+FROM node:14.17.5
 
 # Cria um diretorio de trabalho dentro da imagem
 WORKDIR /app
@@ -34,7 +34,7 @@ CMD ["node", "server.js"]
 # Lista os containers ativos e parados
 # docker container ls
 
-# Remove um containers
+# Remove um container
 # docker container rm <container-id>
 
 # Remove uma imagem
@@ -42,6 +42,6 @@ CMD ["node", "server.js"]
 
 # Argumentos
 # -d: executa em modo deamon, executa sem comprometer o terminal
-# -p: faz um bind expondo a porta local á porta do container
+# -p: faz um bind expondo a porta local para a porta do container
 # -t: nomeia a imagem
 # -f: força a execução do comando
