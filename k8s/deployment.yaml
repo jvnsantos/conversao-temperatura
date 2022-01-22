@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-conversiontemp
+spec:
+  selector:
+    matchLabels:
+      app: app-conversiontemp
+  template:
+    metadata:
+      labels:
+        app: app-conversiontemp
+    spec:
+      containers:
+      - name: app-conv
+        image: rodrigoccs/conversao-temperatura:v3
+        ports:
+          - containerPort: 8080
+
+---
+
+# Service da aplicação
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-conversiontemp
+spec:
+  selector:
+    app: app-conversiontemp
+  ports:
+  - port: 80
+    targetPort: 8080
+    nodePort: 30000
+  type: LoadBalancer
